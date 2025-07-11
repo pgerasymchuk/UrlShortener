@@ -24,6 +24,7 @@ public class ExceptionMiddleware(RequestDelegate next)
             NotFoundException => StatusCodes.Status404NotFound,
             UnauthenticatedException => StatusCodes.Status401Unauthorized,
             UnauthorizedAccessException => StatusCodes.Status403Forbidden,
+            BadCredentialsException => StatusCodes.Status400BadRequest,
             _ => StatusCodes.Status500InternalServerError,
         };
 
