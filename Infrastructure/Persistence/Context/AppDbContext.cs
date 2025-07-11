@@ -1,6 +1,5 @@
 ﻿using Application.Identity;
 using Domain.Entities;
-using Infrastructure.Persistence.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +21,5 @@ public class AppDbContext(DbContextOptions<AppDbContext> options)
 
         builder.Entity<Url>()
             .HasQueryFilter(x => x.DeletedAt == null);
-        
-        builder.SeedUsers();
     }
 }
