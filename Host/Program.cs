@@ -35,6 +35,7 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>(options =>
     {
         options.Password.RequireNonAlphanumeric = false;
+        options.User.RequireUniqueEmail = true; 
     })
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
